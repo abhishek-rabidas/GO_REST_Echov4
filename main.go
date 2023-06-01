@@ -8,16 +8,18 @@ import (
 )
 
 func main() {
-
-	logrus.Info(os.Args)
 	if os.Args[1] == "-debug" {
 		logrus.SetLevel(logrus.DebugLevel)
 	}
 
+	//Database
+	serverConfig := Server.Init(Server.InitializeDB())
+
 	e := echo.New()
 
+	//Routes
 	e.POST("/alert", func(c echo.Context) error {
-		return Server.Alert(c)
+		return serverConfig.Alert(c)
 	})
 
 	logrus.Fatal(e.Start(":55555"))
