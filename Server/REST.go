@@ -7,21 +7,11 @@ import (
 	"net/http"
 )
 
-type Server struct {
-	conn *echo.Echo
-}
+//------------//
+//  Handlers //
+//----------//
 
-func StartServer() *Server {
-	e := echo.New()
-
-	e.POST("/alert", alertController)
-
-	logrus.Fatal(e.Start(":55555"))
-
-	return &Server{e}
-}
-
-func alertController(c echo.Context) error {
+func Alert(c echo.Context) error {
 	logrus.Debug("Alert Controller Called")
 	msg := new(Message.DetectedMessage)
 	err := c.Bind(&msg)
