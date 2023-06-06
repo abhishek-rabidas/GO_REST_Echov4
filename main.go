@@ -3,6 +3,7 @@ package main
 import (
 	"AIDS_Trigger/Server"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"github.com/sirupsen/logrus"
 	"os"
 	"time"
@@ -22,6 +23,8 @@ func main() {
 	serverConfig := Server.Init(Server.InitializeDB())
 
 	e := echo.New()
+
+	e.Use(middleware.CORS())
 
 	ticker := time.NewTicker(5 * time.Second)
 
