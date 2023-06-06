@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "0ce5b54a-f13c-4f32-8632-8b5944b4c466",
+		"name": "AIDS Trigger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:55555/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:55555/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "55555",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:55555/alert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"timestamp\" : \"07 June 2023 12:33:20 PM\",\r\n    \"class\": \"Tiger\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:55555/alert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "55555",
+					"path": [
+						"alert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
