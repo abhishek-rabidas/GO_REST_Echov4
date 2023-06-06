@@ -22,6 +22,10 @@ func main() {
 		return serverConfig.Alert(c)
 	})
 
+	e.GET("/", func(c echo.Context) error {
+		return serverConfig.CheckActivity(c)
+	})
+
 	logrus.Fatal(e.Start(":55555"))
 
 }
