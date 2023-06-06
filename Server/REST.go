@@ -2,6 +2,7 @@ package Server
 
 import (
 	"AIDS_Trigger/Message"
+	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
@@ -29,6 +30,6 @@ func (s *ServerConfig) Alert(c echo.Context) error {
 	if err != nil {
 		return c.String(http.StatusBadRequest, "bad request")
 	}
-
+	fmt.Printf("[%s detected at %s]", msg.Class, msg.Timestamp)
 	return c.JSON(http.StatusOK, "Success")
 }

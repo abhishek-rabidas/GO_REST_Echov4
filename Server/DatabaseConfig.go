@@ -8,6 +8,7 @@ import (
 )
 
 func InitializeDB() *gorm.DB {
+	//dsn := "admin:password@tcp(aids-db.cbo2bmr3r0wv.ap-south-1.rds.amazonaws.com:3306)/aids_db?parseTime=true"
 	dsn := "root:admin@tcp(127.0.0.1:3306)/aids_db?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
