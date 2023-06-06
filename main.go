@@ -9,8 +9,13 @@ import (
 )
 
 func main() {
-	if os.Args[1] == "-debug" {
-		logrus.SetLevel(logrus.DebugLevel)
+
+	if len(os.Args) == 2 {
+		if os.Args[1] == "-debug" {
+			logrus.SetLevel(logrus.DebugLevel)
+		}
+	} else {
+		logrus.SetLevel(logrus.InfoLevel)
 	}
 
 	//Database
