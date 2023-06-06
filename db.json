@@ -1,0 +1,6 @@
+{
+  "Username": "root",
+  "Password": "admin",
+  "Host": "127.0.0.1:3306",
+  "Database": "aids_db"
+}
